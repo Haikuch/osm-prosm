@@ -1,0 +1,92 @@
+[32mSymfony[39m version [33m3.0.6 - app/dev/debug[39m
+
+[33mUsage:[39m
+  command [options] [arguments]
+
+[33mOptions:[39m
+  [32m-h, --help[39m            Display this help message
+  [32m-q, --quiet[39m           Do not output any message
+  [32m-V, --version[39m         Display this application version
+  [32m    --ansi[39m            Force ANSI output
+  [32m    --no-ansi[39m         Disable ANSI output
+  [32m-n, --no-interaction[39m  Do not ask any interactive question
+  [32m-e, --env=ENV[39m         The Environment name.[33m [default: "dev"][39m
+  [32m    --no-debug[39m        Switches off debug mode.
+  [32m-v|vv|vvv, --verbose[39m  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+[33mAvailable commands:[39m
+  [32mhelp[39m                                    Displays help for a command
+  [32mlist[39m                                    Lists commands
+ [33massetic[39m
+  [32massetic:dump[39m                            Dumps all assets to the filesystem
+  [32massetic:watch[39m                           Dumps assets to the filesystem as their source files are modified
+ [33massets[39m
+  [32massets:install[39m                          Installs bundles web assets under a public web directory
+ [33mcache[39m
+  [32mcache:clear[39m                             Clears the cache
+  [32mcache:warmup[39m                            Warms up an empty cache
+ [33mconfig[39m
+  [32mconfig:dump-reference[39m                   Dumps the default configuration for an extension
+ [33mdebug[39m
+  [32mdebug:config[39m                            Dumps the current configuration for an extension
+  [32mdebug:container[39m                         Displays current services for an application
+  [32mdebug:event-dispatcher[39m                  Displays configured listeners for an application
+  [32mdebug:router[39m                            Displays current routes for an application
+  [32mdebug:swiftmailer[39m                       Displays current mailers for an application
+  [32mdebug:translation[39m                       Displays translation messages information
+  [32mdebug:twig[39m                              Shows a list of twig functions, filters, globals and tests
+ [33mdoctrine[39m
+  [32mdoctrine:cache:clear-collection-region[39m  Clear a second-level cache collection region.
+  [32mdoctrine:cache:clear-entity-region[39m      Clear a second-level cache entity region.
+  [32mdoctrine:cache:clear-metadata[39m           Clears all metadata cache for an entity manager
+  [32mdoctrine:cache:clear-query[39m              Clears all query cache for an entity manager
+  [32mdoctrine:cache:clear-query-region[39m       Clear a second-level cache query region.
+  [32mdoctrine:cache:clear-result[39m             Clears result cache for an entity manager
+  [32mdoctrine:database:create[39m                Creates the configured database
+  [32mdoctrine:database:drop[39m                  Drops the configured database
+  [32mdoctrine:ensure-production-settings[39m     Verify that Doctrine is properly configured for a production environment.
+  [32mdoctrine:generate:crud[39m                  Generates a CRUD based on a Doctrine entity
+  [32mdoctrine:generate:entities[39m              Generates entity classes and method stubs from your mapping information
+  [32mdoctrine:generate:entity[39m                Generates a new Doctrine entity inside a bundle
+  [32mdoctrine:generate:form[39m                  Generates a form type class based on a Doctrine entity
+  [32mdoctrine:mapping:convert[39m                Convert mapping information between supported formats.
+  [32mdoctrine:mapping:import[39m                 Imports mapping information from an existing database
+  [32mdoctrine:mapping:info[39m                   
+  [32mdoctrine:query:dql[39m                      Executes arbitrary DQL directly from the command line.
+  [32mdoctrine:query:sql[39m                      Executes arbitrary SQL directly from the command line.
+  [32mdoctrine:schema:create[39m                  Executes (or dumps) the SQL needed to generate the database schema
+  [32mdoctrine:schema:drop[39m                    Executes (or dumps) the SQL needed to drop the current database schema
+  [32mdoctrine:schema:update[39m                  Executes (or dumps) the SQL needed to update the database schema to match the current mapping metadata.
+  [32mdoctrine:schema:validate[39m                Validate the mapping files.
+ [33mgenerate[39m
+  [32mgenerate:bundle[39m                         Generates a bundle
+  [32mgenerate:command[39m                        Generates a console command
+  [32mgenerate:controller[39m                     Generates a controller
+  [32mgenerate:doctrine:crud[39m                  Generates a CRUD based on a Doctrine entity
+  [32mgenerate:doctrine:entities[39m              Generates entity classes and method stubs from your mapping information
+  [32mgenerate:doctrine:entity[39m                Generates a new Doctrine entity inside a bundle
+  [32mgenerate:doctrine:form[39m                  Generates a form type class based on a Doctrine entity
+ [33mhautelook_alice[39m
+  [32mhautelook_alice:doctrine:fixtures:load[39m  Load data fixtures to your database.
+  [32mhautelook_alice:fixtures:load[39m           Load data fixtures to your database.
+ [33mlint[39m
+  [32mlint:twig[39m                               Lints a template and outputs encountered errors
+  [32mlint:yaml[39m                               Lints a file and outputs encountered errors
+ [33morm[39m
+  [32morm:convert:mapping[39m                     Convert mapping information between supported formats.
+ [33mrouter[39m
+  [32mrouter:match[39m                            Helps debug routes by simulating a path info match
+ [33msecurity[39m
+  [32msecurity:check[39m                          Checks security issues in your project dependencies
+  [32msecurity:encode-password[39m                Encodes a password.
+ [33mserver[39m
+  [32mserver:run[39m                              Runs PHP built-in web server
+  [32mserver:start[39m                            Starts PHP built-in web server in the background
+  [32mserver:status[39m                           Outputs the status of the built-in web server for the given address
+  [32mserver:stop[39m                             Stops PHP's built-in web server that was started with the server:start command
+ [33mswiftmailer[39m
+  [32mswiftmailer:debug[39m                       Displays current mailers for an application
+  [32mswiftmailer:email:send[39m                  Send simple email message
+  [32mswiftmailer:spool:send[39m                  Sends emails from the spool
+ [33mtranslation[39m
+  [32mtranslation:update[39m                      Updates the translation file

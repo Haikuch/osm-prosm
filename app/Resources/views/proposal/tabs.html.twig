@@ -1,0 +1,9 @@
+<div id="proposal-tabs">
+    
+    {% block tabs %}
+        <a class="text" href="{{ path('proposal_show', { 'id': proposal.id }) }}"><img src="{{ asset('images/text.png') }}"></a>
+        <a class="talk" href="{{ path('talk_all', { 'id': proposal.id }) }}"><img src="{{ asset('images/talk.png') }}"></a>
+        <a class="edit" href="{{ path('proposal_edit', { 'id': proposal.id }) }}"><img src="{{ asset('images/edit.png') }}"></a>
+    {% endblock %}
+    
+</div>

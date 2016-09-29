@@ -1,0 +1,6 @@
+status.label.draft: Entwurf
+status.label.rfc: RFC
+status.label.voting: Voting
+status.label.approved: Angenommen
+status.label.disaproved: Abgelehnt
+status.label.abandoned: Inaktiv

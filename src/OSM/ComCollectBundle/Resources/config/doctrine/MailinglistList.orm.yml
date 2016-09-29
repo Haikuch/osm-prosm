@@ -1,0 +1,14 @@
+OSM\ComCollectBundle\Entity\MailinglistList:
+    type: entity
+    table: mailinglist_lists
+    repositoryClass: OSM\ComCollectBundle\Repository\MailinglistListRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator: 
+                strategy: AUTO
+    fields:
+        slug:
+            type: string
+            length: '15'

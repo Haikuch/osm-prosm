@@ -1,0 +1,45 @@
+{% trans_default_domain 'show' %}
+
+{% extends 'proposal/single.html.twig' %}
+
+{% block proposal_container %}
+    <div class="show">
+    
+        <div class="title">
+            {{ proposal.name }}
+        </div> 
+
+        <div class="description">
+            {{ 'label.description'|trans }}
+            {{ proposal.description }}
+        </div>   
+
+        <div class="content"> 
+
+            <div class="text">
+                {{ proposal.content | md2html }}
+            </div>
+
+        </div>
+            
+    </div>
+{% endblock %}
+
+{% block details %}
+    {% embed 'proposal/show/details.html.twig' %}
+    {% endembed %}
+{% endblock %}
+
+
+
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/page/show.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}

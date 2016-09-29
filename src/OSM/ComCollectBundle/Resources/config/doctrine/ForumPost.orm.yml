@@ -1,0 +1,30 @@
+OSM\ComCollectBundle\Entity\ForumPost:
+    type: entity
+    table: forum_posts
+    repositoryClass: OSM\ComCollectBundle\Repository\ForumPostRepository
+    manyToOne:
+        thread:
+            targetEntity: ForumThread
+            inversedBy: posts
+            joinColumn:
+                onDelete: CASCADE
+    id:
+        id:
+            type: integer
+            id: true
+    fields:
+        content:
+            type: string
+            length: '999999999'
+        userId:
+            type: integer
+            nullable: TRUE
+        userName:
+            type: string
+            length: '30'
+        createdTime:
+            type: datetime
+        threadId:
+            type: integer
+        number:
+            type: integer

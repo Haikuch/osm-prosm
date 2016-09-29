@@ -1,0 +1,23 @@
+OSM\ComCollectBundle\Entity\Wikipage:
+    type: entity
+    table: wikipages
+    repositoryClass: OSM\ComCollectBundle\Repository\WikipageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator: 
+                strategy: AUTO
+                
+    fields:
+        name:
+            type: string
+            length: '100'
+        content:
+            type: text
+        collectedTime:
+            type: datetime
+            
+    uniqueConstraints:
+        name:
+            columns: name

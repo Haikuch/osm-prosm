@@ -1,0 +1,105 @@
+{% extends 'proposal/talk/talk.html.twig' %}
+
+{% block title %}
+    Wikitalk -
+    {{ parent() }}
+{% endblock %}
+
+{% block options %}
+    <a href="#" class="switchnew" title="nur Ungelesene zeigen"><img src="{{ asset('images/asterisk.png') }}"></a>
+{% endblock %}
+
+{% block channel %}
+
+    <div class="wikitalk">
+        
+        <div class="pagename">
+            <a href="{{ path('talk_wikitalk_index', { 'id': proposal.id }) }}">Index</a> » {{ pagename }}
+        </div> 
+            
+        <div class="info">
+            
+            <div class="emptythreads">
+                <span class="count"></span> Themen ohne neue Beiträge sind ausgeblendet
+            </div>
+            
+        </div>
+        <div class="clear"></div>
+        
+        <div class="threads">
+
+            {% for thread in threads %}
+
+                <div class="thread">
+
+                    <div class="title">
+                        {{ thread.title }}
+                    
+                        <div class="info">
+                            <div class="oldpost">
+                                <span class="count"></span> alte Beiträge sind ausgeblendet
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>  
+
+                    {% for post in thread.posts %}
+
+                        {% set isNew = lastvisit < post.createdTime %}
+
+                        <div class="post {{ isNew ? 'new' }}" style="margin-left: {{ post.layer * 10 }}px">
+
+                            <div class="content">
+                                {{ post.content|nl2br }}
+                                | 
+                                <span class="meta">
+
+                                    <span class="username">
+                                        {{ post.userName }}
+                                    </span> 
+                                    - 
+                                    <span class="datetime">
+                                        {{ post.createdTime|date('H:i, d.m.Y') }}{{ isNew ? '*' }}
+                                    </span>
+
+                                </span>
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+        
+    </div>
+
+{% endblock %}
+
+
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/page/talk/wikitalk.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block active_wikitalk %}
+    active
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 'js/proposal/wikitalk.js' %}
+        {{ parent() }}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+ 

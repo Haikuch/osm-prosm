@@ -1,0 +1,106 @@
+{% extends 'proposal/talk/talk.html.twig' %}
+
+{% block title %}
+    Mailinglist -
+    {{ parent() }}
+{% endblock %}
+
+{% block options %}
+    <a href="#" class="switchorder" title="Neueste zuerst"><img src="{{ asset('images/updown.png') }}"></a>
+    <a href="#" class="switchnew" title="nur Ungelesene zeigen"><img src="{{ asset('images/asterisk.png') }}"></a>
+{% endblock %}
+
+{% block channel %}
+
+    <div class="mailinglist">
+        
+        <div class="crumbs">
+            <a href="{{ path('talk_forum_index', { 'id': proposal.id }) }}">Index</a> » <span class="title">{{ thread.title }}</span>
+        </div>  
+            
+        <div class="info">
+            
+            <div class="switchorder">Neueste Beiträge sind oben</div>
+            <div class="oldpost">
+                <span class="count"></span> alte Beiträge sind ausgeblendet
+            </div>
+            
+        </div>
+        <div class="clear"></div>
+        
+        <div class="thread">
+            
+            {% for post in thread.posts %}
+                
+                {% set isNew = lastvisit < post.fromTime %}
+
+
+                <div class="post {{ isNew ? 'new' }}">
+                    
+                    <div class="meta">
+                        <div class="fromname">{{ post.fromName }}</div>
+                        <div class="fromaddress">&lt;{{ post.fromAddress }}&gt;</div>
+                        <div class="datetime">{{ post.fromTime|date('d.m.Y - H:i') }}{{ isNew ? '*' }}</div>
+                    </div>
+                            
+                    <div class="content">
+                        <div class="border">
+                            
+                            {% set lines = post.content|split('\n') %}
+                            {% set quoting = false %}
+
+                            
+                            {% for line in lines %}
+                                
+                                {% if line|slice(0,1) == '>' and quoting == false %}
+                                    {% set quoting = true %}
+
+                                    <div class="quote">
+                                
+                                {% elseif quoting and line|slice(0,1) != '>' %}
+                                    {% set quoting = false %}
+                                    </div>
+                                {% endif %}
+                                
+                                {% if quoting %}
+                                    {% set line = line[1:]~'\n' %}
+                                {% endif %}
+                                
+                                {{ line }}<br>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/page/talk/mailinglist.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block active_mailinglist %}
+    active
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 'js/proposal/mailinglist.js' %}
+        {{ parent() }}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+ 

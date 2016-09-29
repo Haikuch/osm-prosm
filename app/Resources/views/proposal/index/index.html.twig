@@ -1,0 +1,38 @@
+{% trans_default_domain 'proposal' %}
+
+{% extends 'proposal/proposal.html.twig' %}
+
+{% block proposal_container %}
+    
+    <div id="index-bar"></div>
+
+    {% for proposal in proposals %}
+
+        <a href="{{ path('proposal_show', { 'id': proposal.id }) }}" class="proposal">
+            <div class="title">{{ proposal.name }}</div>
+            <div class="description">{{ proposal.description }}</div>
+            <div class="author">Hakuch</div>
+        </a>
+
+    {% endfor %}
+        
+    <div class="clear"></div>
+        
+
+    <ul>
+        <li>
+            <a href="{{ path('proposal_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/page/index.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}

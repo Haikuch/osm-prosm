@@ -1,0 +1,21 @@
+OSM\ComCollectBundle\Entity\LastCollect:
+    type: entity
+    table: last_collect
+    repositoryClass: OSM\ComCollectBundle\Repository\LastCollectRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator: 
+                strategy: AUTO
+    fields:
+        channel:
+            type: string
+            length: '20'
+        time:
+            type: datetime
+            
+    uniqueConstraints:
+        channel:
+          columns: [ channel ]
+       

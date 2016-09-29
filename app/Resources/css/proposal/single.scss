@@ -1,0 +1,92 @@
+@import "../basic";
+@import "details";
+
+#proposal-tabs {
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 100%;
+    background: #030072;
+    padding-top: 50px;
+    
+    a {
+    
+        margin-top: 10px;
+        margin-left: 5px;
+        
+        padding: 10px;
+        float: left;
+        
+        border: 1px solid black;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-left: none;
+    }
+    
+    a:hover {
+        
+        border-right: 3px solid black;
+    }
+        
+    .text {
+
+        background: #ABABFF;
+    }
+        
+    .talk {
+
+        background: #FBC545;
+    }
+        
+    .edit {
+
+        background: #69F675;
+    }
+}
+
+#details {
+    
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    
+    >div {
+        
+        margin-bottom: 20px;
+        padding: 5px;
+        width: 200px;
+        background: white;
+        border-radius: 1px;
+
+        box-shadow: 1px 1px 2px 0px rgba(0,0,0,1);
+    }
+    
+    .data {
+        
+        .table {
+        
+            border-collapse:separate;
+            border-spacing: 0px 10px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+            width: 100%;
+
+            .row {
+
+                .key {
+
+                    text-align: left;
+                    color: $grey;   
+                    font-weight: bold;
+                }
+
+                .value {
+
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

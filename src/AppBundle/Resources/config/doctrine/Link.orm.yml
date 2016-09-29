@@ -1,0 +1,20 @@
+AppBundle\Entity\Link:
+    type: entity
+    table: links
+    repositoryClass: AppBundle\Entity\LinkRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        localChannel:
+            type: string
+            columnDefinition: ENUM('proposal')
+        localReference:
+            type: integer
+        remoteChannel:
+            type: string
+            columnDefinition: ENUM('wikitalk', 'forum', 'mailinglist', 'other')
+        remoteReference:
+            type: string
+            length: 255

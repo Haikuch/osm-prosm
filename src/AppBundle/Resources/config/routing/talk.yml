@@ -1,0 +1,42 @@
+
+#All
+talk_all:
+    path:     /
+    defaults: { _controller: "AppBundle:Talk:all" }
+    methods:  GET
+    
+    
+#Forum
+talk_forum_index:
+    path:     /forum
+    defaults: { _controller: "AppBundle:Talk:forumIndex" }
+    methods:  GET
+
+talk_forum_thread:
+    path:     /forum/{thread}/{title}
+    defaults: { _controller: "AppBundle:Talk:forumThread" }
+    methods:  GET
+    
+    
+#Mailinglist
+talk_mailinglist_index:
+    path:     /mailinglist
+    defaults: { _controller: "AppBundle:Talk:mailinglistIndex" }
+    methods:  GET
+    
+talk_mailinglist_thread:
+    path:     /mailinglist/{thread}/{title}
+    defaults: { _controller: "AppBundle:Talk:mailinglistThread" }
+    methods:  GET
+    
+    
+#Wikitalk
+talk_wikitalk_index:
+    path:     /wikitalk
+    defaults: { _controller: "AppBundle:Talk:wikitalkIndex" }
+    methods:  GET
+    
+talk_wikitalk_page:
+    path:     /wikitalk/{page}/{title}
+    defaults: { _controller: "AppBundle:Talk:wikitalkPage" }
+    methods:  GET

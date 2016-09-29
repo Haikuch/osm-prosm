@@ -1,0 +1,51 @@
+proposal_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Proposal:index" }
+    methods:  GET
+
+proposal_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Proposal:show" }
+    methods:  GET
+
+proposal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Proposal:edit" }
+    methods:  [GET, POST]
+
+proposal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Proposal:delete" }
+    methods:  DELETE
+    
+    
+
+proposal_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Proposal:new" }
+    methods:  [GET, POST]
+
+proposal_wizard:
+    path:     /new/wizard/
+    defaults: { _controller: "AppBundle:ProposalWizard:start" }
+    methods:  [GET, POST]
+
+proposal_wizard_entry:
+    path:     /new/wizard/entry/{proposal}
+    defaults: { _controller: "AppBundle:ProposalWizard:entry" }
+    methods:  [GET, POST]
+
+proposal_wizard_maintext:
+    path:     /new/wizard/maintext/{proposal}
+    defaults: { _controller: "AppBundle:ProposalWizard:maintext" }
+    methods:  [GET, POST]
+
+proposal_wizard_timesStatus:
+    path:     /new/wizard/times_and_status/{proposal}
+    defaults: { _controller: "AppBundle:ProposalWizard:timesStatus" }
+    methods:  [GET, POST]
+
+proposal_wizard_talk:
+    path:     /new/wizard/talk/{proposal}
+    defaults: { _controller: "AppBundle:ProposalWizard:talk" }
+    methods:  [GET, POST]

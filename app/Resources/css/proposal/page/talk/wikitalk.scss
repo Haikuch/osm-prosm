@@ -1,0 +1,80 @@
+@import '../../../basic';
+@import 'options';
+
+#proposal-container .talk .wikitalk {
+    
+    .pagename {
+        
+        font-size: 1.8em;
+        font-family: "Linux Libertine",Georgia,Times,serif;
+        border-bottom: 1px solid #aaa;
+    }
+
+    .threads {
+        
+        margin-top: 30px;
+        
+        .thread {
+
+            padding-bottom: 15px;
+
+            .title {
+
+                margin-bottom: 20px;
+                width: 100%;
+                border-bottom: 1px solid #B6B6B6;
+
+                font-size: 1.5em;
+                font-family: "Linux Libertine",Georgia,Times,serif;
+                
+                .info {
+                    
+                    float: right;
+                }
+            }
+
+            .post {
+            
+                margin-bottom: 10px;
+
+                * {
+
+                    text-align: justify;
+                    line-height: 18px;
+                    font-size: 0.875em;
+                    font-family: sans-serif !important;
+                }
+                
+                .content {
+
+                    br {
+
+                        display: block;
+                        margin-top: 5px;
+                    }
+                }
+                
+                .meta {
+                    
+                    .username {
+                        
+                        font-weight: bold;
+                    }
+                    
+                    .datetime {
+                        
+                        font-style: italic;
+                    }
+                }
+            }
+        
+            .post.new {
+
+                .datetime {
+
+                    color: red;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+OSM\ComCollectBundle\Entity\WikitalkPost:
+    type: entity
+    table: wikitalk_posts
+    repositoryClass: OSM\ComCollectBundle\Repository\WikitalkPostRepository
+    manyToOne:
+        thread:
+            targetEntity: WikitalkThread
+            inversedBy: posts
+            joinColumn:
+                onDelete: CASCADE
+        parent:
+            targetEntity: WikitalkPost
+            inversedBy: children
+            joinColumn:
+                onDelete: CASCADE
+    oneToMany:
+        children:
+            targetEntity: WikitalkPost
+            mappedBy: parent
+    id:
+        id:
+            type: integer
+            id: true
+            generator: 
+                strategy: AUTO
+                
+    fields:
+        content:
+            type: string
+            length: '99999999'
+        userName:
+                type: string
+                length: '30'
+                nullable: true
+        createdTime:
+            type: datetime
+            nullable: true
+        collectedTime:
+            type: datetime
+        threadId:
+            type: integer
+        parentId:
+            type: integer
+            nullable: true
+        layer:
+            type: integer
+            length: 2
+        
+       

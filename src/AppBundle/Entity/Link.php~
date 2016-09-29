@@ -1,0 +1,113 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Link
+ */
+class Link
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $channel;
+
+    /**
+     * @var string
+     */
+    private $reference;
+
+    /**
+     * @var \AppBundle\Entity\Proposal
+     */
+    private $status;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set channel
+     *
+     * @param string $channel
+     *
+     * @return Link
+     */
+    public function setChannel($channel)
+    {
+        $this->channel = $channel;
+
+        return $this;
+    }
+
+    /**
+     * Get channel
+     *
+     * @return string
+     */
+    public function getChannel()
+    {
+        return $this->channel;
+    }
+
+    /**
+     * Set reference
+     *
+     * @param string $reference
+     *
+     * @return Link
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Get reference
+     *
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * Set status
+     *
+     * @param \AppBundle\Entity\Proposal $status
+     *
+     * @return Link
+     */
+    public function setStatus(\AppBundle\Entity\Proposal $status = null)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return \AppBundle\Entity\Proposal
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+}
+

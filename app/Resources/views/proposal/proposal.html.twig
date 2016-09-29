@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/main.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block basecontent %}
+
+    <div id="proposal-container-before">
+        {% block proposal_container_before %}
+        {% endblock %}
+    </div>
+
+    <div id="proposal-container">
+        {% block proposal_container %}
+        {% endblock %}
+    </div>
+
+    <div id="proposal-container-after">
+        {% block proposal_container_after %}
+        {% endblock %}
+    </div>
+        
+{% endblock %}

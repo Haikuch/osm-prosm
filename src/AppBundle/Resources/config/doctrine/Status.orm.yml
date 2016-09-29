@@ -1,0 +1,16 @@
+AppBundle\Entity\Status:
+    type: entity
+    table: statuses
+    repositoryClass: AppBundle\Entity\StatusRepository
+    oneToMany:
+        proposals:
+            targetEntity: Proposal
+            mappedBy: status
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        slug:
+            type: string
+            length: 10

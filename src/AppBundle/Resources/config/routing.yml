@@ -1,0 +1,26 @@
+app_ticket:
+    resource: "@AppBundle/Resources/config/routing/ticket.yml"
+    prefix:   /{_locale}/ticket
+    requirements: 
+        _locale: '%app.locales%'
+        
+app_proposal:
+    resource: "@AppBundle/Resources/config/routing/proposal.yml"
+    prefix:   /{_locale}/proposal
+    requirements: 
+        _locale: '%app.locales%'        
+        
+app_talk:
+    resource: "@AppBundle/Resources/config/routing/talk.yml"
+    prefix:   /{_locale}/proposal/{id}/talk
+    requirements: 
+        _locale: '%app.locales%'       
+        
+app_parse_markup2markdown:
+    path:   /{_locale}/parse/markup2markdown
+    defaults: { _controller: AppBundle:Ajax:parseMarkup2Markdown }
+    
+test_markdown:
+    path: /test/markdown
+    defaults: { _controller: AppBundle:Test:markdown }
+

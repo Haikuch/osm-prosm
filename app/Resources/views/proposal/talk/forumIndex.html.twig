@@ -1,0 +1,54 @@
+{% extends 'proposal/talk/talk.html.twig' %}
+
+{% block title %}
+    Forum -
+    {{ parent() }}
+{% endblock %}
+
+{% block channel %}
+
+    <div class="forum-index">
+        
+        Es sind mehrere Themen mit diesem Proposal verknüpft
+        
+        <div class="table">
+            
+            {% for thread in threads %}
+
+                <div class="thread row">
+                    
+                    <div class="title cell"><a href="{{ path('talk_forum_thread', { 'id': proposal.id, 'thread': thread.id, 'title' : thread.title|replace({ (' '):'_' }) }) }}">{{ thread.title }}</a></div>
+                    <div class="count cell">{{ thread.posts.count }}</div>
+                </div>
+
+            {% endfor %}
+            
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/talk/forum.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block active_forum %}
+    active
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 'js/talk.js' %}
+        {{ parent() }}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+ 

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta http-equiv="refresh" content="60; URL=http://localhost:8000/com-collect/" /> 
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+            {% javascripts
+                '@OSMComCollectBundle/Resources/public/js/*'
+            %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </head>
+<body>
+
+    {{ 'now'|date('H:i:s') }}<br>
+    <br>
+    
+    <input type="button" id="collect" value="Collect">
+
+    <div id="forum" style="margin: 10px;padding: 10px; border: 1px solid black;">Forum</div>
+    <div id="mailinglist" style="margin: 10px;padding: 10px; border: 1px solid black;">Mails</div>
+    <div id="wikitalk" style="margin: 10px;padding: 10px; border: 1px solid black;">Wikitalk</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+OSM\ComCollectBundle\Entity\ForumUser:
+    type: entity
+    table: forum_users
+    repositoryClass: OSM\ComCollectBundle\Repository\ForumUserRepository
+    id:
+        id:
+            type: integer
+            id: true
+    fields:
+        name:
+            type: string
+            length: '30'
+            unique: true

@@ -1,0 +1,20 @@
+input, textarea, select {
+    
+    border: 1px solid #BBBBBB;
+    padding: 5px;
+    width: 100%;
+    margin: 0;
+    border-radius: 2px;
+    background: white;
+}
+
+input[type=submit] {
+    
+    background: #dbf2be;
+    width: inherit;
+    border-radius: 2px;
+    border: 1px solid #888888;
+    padding: 3px;
+    font-size: 8pt;
+    font-weight: bold;
+}

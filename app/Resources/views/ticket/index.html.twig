@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Ticket list</h1>
+    
+    {{ 'form.description'|trans }}
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Content</th>
+                <th>Status</th>
+                <th>Createdtime</th>
+                <th>Updatedtime</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ticket in tickets %}
+            <tr>
+                <td><a href="{{ path('ticket_show', { 'id': ticket.id }) }}">{{ ticket.id }}</a></td>
+                <td>{{ ticket.name }}</td>
+                <td>{{ ticket.content }}</td>
+                <td>{{ ticket.status }}</td>
+                <td>{% if ticket.createdTime %}{{ ticket.createdTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if ticket.updatedTime %}{{ ticket.updatedTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ticket_show', { 'id': ticket.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ticket_edit', { 'id': ticket.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ticket_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

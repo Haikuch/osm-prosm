@@ -1,0 +1,83 @@
+<?php
+
+namespace OSM\ComCollectBundle\Entity;
+
+/**
+ * LastItem
+ */
+class LastItem
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $channel;
+
+    /**
+     * @var \DateTime
+     */
+    private $time;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set channel
+     *
+     * @param string $channel
+     *
+     * @return LastItem
+     */
+    public function setChannel($channel)
+    {
+        $this->channel = $channel;
+
+        return $this;
+    }
+
+    /**
+     * Get channel
+     *
+     * @return string
+     */
+    public function getChannel()
+    {
+        return $this->channel;
+    }
+
+    /**
+     * Set time
+     *
+     * @param \DateTime $time
+     *
+     * @return LastItem
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * Get time
+     *
+     * @return \DateTime
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+}

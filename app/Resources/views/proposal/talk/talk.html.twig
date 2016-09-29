@@ -1,0 +1,47 @@
+{% extends 'proposal/single.html.twig' %}
+
+{% block title %}Talk - Proposal{% endblock %}
+
+{% block proposal_container %}
+    
+    <div class="talk">
+
+        <div class="tabs">
+            
+            <a href="{{ path('talk_all', { 'id': proposal.id }) }}" class="all {% block active_all %}{% endblock %}">Alle Kanäle</a>{# 
+            #}<a href="{{ path('talk_forum_index', { 'id': proposal.id }) }}" class="forum {% block active_forum %}{% endblock %}">Forum</a>{# 
+            #}<a href="{{ path('talk_mailinglist_index', { 'id': proposal.id }) }}" class="mailinglist {% block active_mailinglist %}{% endblock %}">Mailinglist</a>{# 
+            #}<a href="{{ path('talk_wikitalk_index', { 'id': proposal.id }) }}" class="wikitalk {% block active_wikitalk %}{% endblock %}">Wikitalk</a>
+            
+            
+            <div class="options">
+                {% block options %}
+                {% endblock %}
+            </div>
+            
+        </div>
+        
+        <div class="channel-content">
+            {% block channel %}{% endblock %}
+        </div>
+    </div>
+        
+{% endblock %}
+
+{% block details %}
+    {% embed 'proposal/talk/details.html.twig' %}
+    {% endembed %}
+{% endblock %}
+
+
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/page/talk.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}

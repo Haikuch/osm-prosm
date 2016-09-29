@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Test Markdown</title>
+        {% stylesheets filter="sass"
+            "css/test/markdown.scss"
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    </head>
+<body>
+    <form action="http://localhost:8000/de/parse/markup2markdown" method="POST">
+    <table>
+        <tr>
+            <th><textarea name="markup" id="markup"></textarea></th>
+            <th><textarea name="markdown" id="markdown"></textarea></th>    
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="parseit">
+            </td>
+        </tr>        
+    </table>
+    </form>
+
+
+
+    {% javascripts 
+        'js/jquery.js'
+        'js/jquery.hotkeys.js'
+        'js/test/markdown.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+
+
+</body>
+</html>

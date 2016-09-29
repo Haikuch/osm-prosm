@@ -1,0 +1,95 @@
+{% trans_default_domain 'edit' %}
+
+{% extends 'proposal/single.html.twig' %}
+
+{% block title %}
+    Edit -
+    {{ parent() }}
+{% endblock %}
+
+{% block proposal_container %}
+    
+    <div class="edit form">
+
+        {{ form_start(form) }}
+        <div class="meta table nofullscreen">
+            
+            <div class="row name">
+                <span class="cell label">Titel des Proposals</span>
+                <span class="cell">{{ form_row(form.name, { 'label': 'form.label.name'|trans }) }}</span>
+            </div>
+            
+            <div class="row description">
+                <span class="cell label">Kurze Beschreibung</span>
+                <span class="cell">{{ form_row(form.description, { 'label': 'form.label.description'|trans }) }}</span>
+            </div>
+            
+        </div>
+            
+        <div class="content">
+            <div id="wiki-insert-area">
+                <div class="dimmer"></div>
+                
+                <div class="insertion">
+                    <textarea class="wikitext"></textarea>
+                    <input class="cancel" type="button" value="Abbrechen"><input class="insert" type="button" value="Einfügen">
+                </div>
+            </div>
+            
+            {{ form_row(form.content, { 'label': 'form.label.content'|trans }) }}
+        </div>  
+            
+        <div class="times nofullscreen">
+            draft {{ form_row(form.draftStartTime, { 'label': 'form.label.status'|trans }) }}
+            rfc {{ form_row(form.rfcStartTime, { 'label': 'form.label.status'|trans }) }}
+            vote {{ form_row(form.voteStartTime, { 'label': 'form.label.status'|trans }) }}
+            - {{ form_row(form.voteEndTime, { 'label': 'form.label.status'|trans }) }}
+        </div>
+        
+        <div class="checks nofullscreen">
+
+            <span class="cell">{{ form_row(form.isDraft, { 'label': 'form.label.isdraft'|trans }) }}</span>
+            <span class="draft">Entwurf - ich </span>
+
+        </div>
+            
+        {{ form_end(form) }}
+
+    </div>
+            
+{% endblock %}
+
+{% form_theme form _self %}
+{% block form_row %}
+
+            {{ form_widget(form) }}
+{% endblock %}
+
+{% block details %}
+    {% embed 'proposal/edit/details.html.twig' %}
+    {% endembed %}
+{% endblock %}
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets
+        "css/proposal/page/edit.scss"
+        "bundles/bmatznerfontawesome/scss/font-awesome.scss"
+        "bundles/simplemde/debug/simplemde.css"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 
+        'bundles/simplemde/debug/simplemde.debug.js'
+        'js/proposal/edit.js' 
+    %}
+        {{ parent() }}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

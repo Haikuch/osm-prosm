@@ -1,0 +1,122 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: doctrine_extensions.yml }
+    
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+    app.locales: en|de    
+    # Assetic
+    assetic.filter.compass.images_dir: %kernel.root_dir%/../web/images
+    assetic.filter.compass.http_path:  /images
+
+framework:
+    #esi:             ~
+    translator:      { fallbacks: ["de"] }
+    default_locale:  de
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    fragments:       ~
+    http_method_override: true
+    assets: ~
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                    driver:   pdo_mysql
+                    host:     "%database_host%"
+                    port:     "%database_port%"
+                    dbname:   "%database_name%"
+                    user:     "%database_user%"
+                    password: "%database_password%"
+                    charset:  UTF8
+            
+            osmcc:
+                    driver:   pdo_mysql
+                    host:     "%database_host%"
+                    port:     "%database_port%"
+                    dbname:   "osmcc"
+                    user:     "%database_user%"
+                    password: "%database_password%"
+                    charset:  UTF8
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        #auto_mapping: true
+        default_entity_manager: default
+        entity_managers:
+            default:
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                connection: default
+                mappings:
+                    AppBundle:  ~
+                    translatable:
+                        type: yml
+                        alias: Gedmo
+                        prefix: Gedmo\Translatable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+            osmcc:
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                connection: osmcc
+                mappings:
+                    OSMComCollectBundle: ~
+            
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+#AssetsManagement
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    read_from:      %kernel.root_dir%/Resources/
+    filters:
+        cssrewrite: ~
+        sass: 
+            bin: /usr/local/bin/sass
+            apply_to: ".scss$"
+        #compass: konnte ich noch nicht installieren
+        
+#DataFixtures
+hautelook_alice:
+    db_drivers:
+        orm: ~          # Enable Doctrine ORM if is registered
+        #mongodb: ~      # Enable Doctrine ODM if is registered
+        #phpcr: ~        # Enable Doctrine PHPCR ODM if is registered
+    locale: en_US       # Locale to used for faker; must be a valid Faker locale otherwise will fallback to en_EN
+    seed: 1             # A seed to make sure faker generates data consistently across runs, set to null to disable
+    persist_once: false # Only persist objects once if multiple files are passed
+    loading_limit: 5    # Maximum number of time the loader will try to load the files passed        
+    
+ 

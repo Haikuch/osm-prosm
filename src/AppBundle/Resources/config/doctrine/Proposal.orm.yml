@@ -1,0 +1,62 @@
+AppBundle\Entity\Proposal:
+    type: entity
+    table: proposals
+    repositoryClass: AppBundle\Entity\ProposalRepository
+    manyToOne:
+        status:
+            targetEntity: Status
+            inversedBy: proposals
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: TRUE
+        description:
+            type: text
+            length: 255
+            nullable: TRUE
+        content:
+            type: text
+            nullable: TRUE
+        createdTime:
+            type: datetime
+            nullable: TRUE
+            gedmo:
+                timestampable:
+                    on: create
+        updatedTime:
+            type: datetime
+            nullable: TRUE
+            gedmo:
+                timestampable:
+                    on: update
+        draftStartTime:
+            type: datetime
+            nullable: TRUE
+        rfcStartTime:
+            type: datetime
+            nullable: TRUE
+        voteStartTime:
+            type: datetime
+            nullable: TRUE
+        voteEndTime:
+            type: datetime
+            nullable: TRUE
+        authorId:
+            type: integer
+            nullable: TRUE
+        views:
+            type: integer
+            nullable: TRUE
+        isApproved:
+            type: boolean
+            nullable: TRUE
+        isArchived:
+            type: boolean
+            nullable: TRUE
+        isCreating:
+            type: boolean

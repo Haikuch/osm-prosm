@@ -1,0 +1,24 @@
+OSM\ComCollectBundle\Entity\ForumThread:
+    type: entity
+    table: forum_threads
+    repositoryClass: OSM\ComCollectBundle\Repository\ForumThreadRepository
+    oneToMany:
+        posts:
+            targetEntity: ForumPost
+            mappedBy: thread
+    id:
+        id:
+            type: integer
+            id: true
+    fields:
+        title:
+            type: string
+            length: '255'
+        userId:
+            type: integer
+            nullable: TRUE
+        userName:
+            type: string
+            length: '30'
+        boardId: 
+            type: integer

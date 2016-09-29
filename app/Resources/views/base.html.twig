@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        
+        {% use "::stylesheets.html.twig" %}
+        
+        {% block stylesheets %}
+            {{ parent() }}
+        {% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="asset('favicon.ico')" />
+    </head>
+    <body>
+        {% block body %}
+            
+            <div id="navigation">
+                {% block navigation %}
+                    <a href="{{ path('proposal_new') }}">Add Proposal</a>
+                    <a href="{{ path('proposal_index') }}">Proposal Overview</a>
+                    <img src="{{ asset('images/logo2.png') }}">
+                {% endblock %}
+            </div>
+            
+            {% block baseleft %}
+            {% endblock %}
+        
+            <div id="basecontent">
+                {% block basecontent %}
+                {% endblock %}
+            </div>
+            
+            {% block baseright %}
+            {% endblock %}
+            
+        {% endblock %}
+        
+        {% block javascripts %}
+            {% javascripts 
+                    'js/jquery.js'
+                    'js/jquery-ui.js'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

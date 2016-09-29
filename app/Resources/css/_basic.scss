@@ -1,0 +1,26 @@
+@mixin box-shadow () {
+    
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+}
+
+$grey: #C0C0C0;
+$linkhover: #c50000;
+
+//basic table design
+.table {
+    
+    display: table;
+    
+    .row {
+        
+        display: table-row;
+        
+        .cell {
+            
+            vertical-align: top;
+            display: table-cell;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+#LABELS
+form.label.name: Name
+form.label.description: Kurzbeschreibung
+form.label.content: Haupttext
+form.label.status: Status
+form.label.button: Änderungen speichern
+
+#BESCHREIBUNGEN
+form.description.name: >
+                        Wähle einen deutlichen Titel für dein Proposal, 
+                        der zeigt was du vorhast. Wenn du ein bestimmtes 
+                        Tag ändern oder einführen willst, sollte das hier 
+                        auch schon genannt sein, damit andere Leute darauf 
+                        aufmerksam werden.
+                        
+form.description.description: >
+                        Gib eine kurze zusammen-fassende Übersicht, was du 
+                        machen möchtest und warum. Es reichen ein bis zwei Sätze.
+                        
+form.description.content: >
+                        Gib eine kurze zusammen-fassende Übersicht, was du 
+                        machen möchtest und warum. Es reichen ein bis zwei Sätze.
+                        
+form.description.status: >
+                        Wähle hier aus in welchem Zustand dein Text ist, ob du ihn noch entwirfst,
+                        er schon fertig ausgearbeitet ist du aber noch Kommentare brauchst oder ob 
+                        schon gewählt werden soll. Bitte beachte auch die Vorgaben für den 
+                        Proposal-Prozess

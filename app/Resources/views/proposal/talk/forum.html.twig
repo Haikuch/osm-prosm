@@ -1,0 +1,84 @@
+{% extends 'proposal/talk/talk.html.twig' %}
+
+{% block title %}
+    Forum -
+    {{ parent() }}
+{% endblock %}
+
+{% block options %}
+    <a href="#" class="switchorder" title="Neueste zuerst"><img src="{{ asset('images/updown.png') }}"></a>
+    <a href="#" class="switchnew" title="nur Ungelesene zeigen"><img src="{{ asset('images/asterisk.png') }}"></a>
+{% endblock %}
+
+{% block channel %}
+
+    <div class="forum">
+        
+        <div class="crumbs">
+            <a href="{{ path('talk_forum_index', { 'id': proposal.id }) }}">Index</a> » <span class="title">{{ thread.title }}</span>
+        </div>  
+            
+        <div class="info">
+            
+            <div class="switchorder">Neueste Beiträge sind oben</div>
+            <div class="oldpost">
+                <span class="count"></span> alte Beiträge sind ausgeblendet
+            </div>
+            
+        </div>
+        <div class="clear"></div>
+        
+        <div class="thread table">
+            
+            {% for post in thread.posts %}
+                
+                {% set isNew = lastvisit < post.createdTime %}
+
+
+                <div class="post row {{ isNew ? 'new' }}">
+                    
+                    <div class="meta cell">
+                        <div class="username">{{ post.userName }}</div>
+                        <div class="datetime">{{ post.createdTime|date('d.m.Y - H:i') }}{{ isNew ? '*' }}</div>
+                    </div>
+                            
+                    <div class="content cell">
+                        <div class="border">
+                            {{ post.content|raw }}
+                        </div>
+                    </div>
+                    
+                </div>
+            
+                <div class="clear"></div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/page/talk/forum.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block active_forum %}
+    active
+{% endblock %}
+
+{% block javascripts %}
+    {% javascripts 'js/proposal/forum.js' %}
+        {{ parent() }}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+ 

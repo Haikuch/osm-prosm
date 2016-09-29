@@ -1,0 +1,14 @@
+osm_com_collect:
+    prefix:   /osmcc/
+    resource: "@OSMComCollectBundle/Resources/config/routing.yml"
+
+app:
+    prefix:   /
+    resource: "@AppBundle/Resources/config/routing.yml"
+    
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /de/proposal
+        permanent: true

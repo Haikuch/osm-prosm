@@ -1,0 +1,8 @@
+{% for post in posts %}
+    
+    <b>{{ post.userName }}</b> - <i>{{ post.createdTime|date('H:i, d.m.Y') }}</i><br>
+    {{ post.content|raw }}<br>
+    <br>
+    <br>
+    
+{% endfor %}

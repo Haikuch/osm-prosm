@@ -1,0 +1,39 @@
+OSM\ComCollectBundle\Entity\MailinglistPost:
+    type: entity
+    table: mailinglist_posts
+    repositoryClass: OSM\ComCollectBundle\Repository\MailinglistPostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator: 
+                strategy: AUTO
+    manyToOne:
+        thread:
+            targetEntity: MailinglistThread
+            inversedBy: posts
+            joinColumn:
+                onDelete: CASCADE
+    fields:
+        content:
+            type: string
+            length: '999999999'
+        fromName:
+            type: string
+            length: '255'
+            nullable: TRUE
+        fromAddress:
+            type: string
+            length: '255'
+        fromTime:
+            type: datetime
+        collectedTime:
+            type: datetime
+        messageId:
+            type: string
+            nullable: '255'
+            unique: true
+        inreplytoId:
+            type: string
+            length: '255'
+            nullable: TRUE

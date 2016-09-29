@@ -1,0 +1,49 @@
+
+.options {
+
+    padding-top: 10px;
+
+    a {
+
+        float: right;
+        text-align: center;
+        margin-right: 8px;
+
+        border-top: 3px solid white;
+        border-radius: 3px;
+    }
+
+    a:hover {
+
+        border-top: 3px solid black;
+        border-radius: 3px;
+
+    }
+
+    a.active {
+
+        border-bottom: 3px solid black;
+    }
+}
+        
+.info {
+
+    div {
+
+        text-align: center;
+        padding: 5px;
+        float: left;
+        margin-right: 8px;
+
+        background: #F8FC5B;
+        border-radius: 2px;
+        font-size: 8pt !important;
+
+        display: none;
+    }
+
+    .count {
+
+        font-size: 8pt; //todo: should not be neccessary
+    }
+}

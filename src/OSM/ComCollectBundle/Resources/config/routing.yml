@@ -1,0 +1,23 @@
+osm_com_collect_homepage:
+    path:     /
+    defaults: { _controller: OSMComCollectBundle:Default:index }
+
+osm_com_collect_forum_collect:
+    path:     /forum/collect
+    defaults: { _controller: OSMComCollectBundle:Forum:collect }
+    methods:  GET
+    
+osm_com_collect_mailinglist_collect:
+    path:     /mailinglist/collect
+    defaults: { _controller: OSMComCollectBundle:Mailinglist:collect }
+    methods:  GET
+    
+osm_com_collect_wikitalk_collect:
+    path:     /wikitalk/collect
+    defaults: { _controller: OSMComCollectBundle:Wikitalk:collect }
+    methods:  GET
+    
+osm_com_collect_wikipage_collect:
+    path:     /wikipage/collect
+    defaults: { _controller: OSMComCollectBundle:Wikipage:collect }
+    methods:  GET

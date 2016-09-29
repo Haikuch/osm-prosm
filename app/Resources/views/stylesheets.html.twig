@@ -1,0 +1,11 @@
+{% block stylesheets %}
+
+    {% stylesheets filter="sass"
+        "css/main.scss"
+        "css/basic.scss"
+        "css/jquery-ui.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+{% endblock %}

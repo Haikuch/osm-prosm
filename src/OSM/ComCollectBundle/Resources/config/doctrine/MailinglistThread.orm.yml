@@ -1,0 +1,25 @@
+OSM\ComCollectBundle\Entity\MailinglistThread:
+    type: entity
+    table: mailinglist_threads
+    repositoryClass: OSM\ComCollectBundle\Repository\MailinglistThreadRepository
+    oneToMany:
+        posts:
+            targetEntity: MailinglistPost
+            mappedBy: thread
+    manyToOne:
+        list:
+            targetEntity: MailinglistList
+            joinColumn:
+                onDelete: CASCADE
+    id:
+        id:
+            type: integer
+            id: true
+            generator: 
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '255'
+        
+       

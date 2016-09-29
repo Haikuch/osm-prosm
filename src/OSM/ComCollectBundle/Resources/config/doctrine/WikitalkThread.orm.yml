@@ -1,0 +1,27 @@
+OSM\ComCollectBundle\Entity\WikitalkThread:
+    type: entity
+    table: wikitalk_threads
+    repositoryClass: OSM\ComCollectBundle\Repository\WikitalkThreadRepository
+    oneToMany:
+        posts:
+            targetEntity: WikitalkPost
+            mappedBy: thread
+    id:
+        id:
+            type: integer
+            id: true
+            generator: 
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '255'
+        pageName:
+            type: string
+            length: '255'
+            
+    uniqueConstraints:
+        pageName_title:
+          columns: [ page_name, title ]
+        
+       

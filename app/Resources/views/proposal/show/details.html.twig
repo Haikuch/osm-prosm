@@ -1,0 +1,46 @@
+{% trans_default_domain 'proposal' %}
+
+{% block details %}
+    <div id="details">
+        
+        <div class="title">
+            Proposal
+        </div>
+        
+        <div class="data">
+            <div class="table">
+            
+                <div class="row">
+                    <div class="key cell">Autor:in</div>
+                    <div class="value cell">Hakuch</div>
+                </div>
+
+                <div class="row">
+                    <div class="key cell">Status</div>
+                    <div class="value cell">{{ ('status.label.' ~ proposal.status.slug)|trans }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="key cell">Besucher:innen</div>
+                    <div class="value cell">{{ proposal.views }}</div>
+                </div>
+
+                <div class="row">
+                    <div class="key cell">Alter</div>
+                    <div class="value cell">5 Tage</div>
+                </div>
+
+                <div class="row">
+                    <div class="key cell">Versionen</div>
+                    <div class="value cell">12x</div>
+                </div>
+                
+            </div>
+        </div>
+        
+        {% use 'proposal/show/statuses.html.twig' %}
+        
+        {{ block('status_' ~ proposal.status.slug) }}
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% block status_draft %}
+<div class="status draft">
+    <div class="title">Draft</div>
+    Dieses Proposal wird derzeit von Hakuch vorbereitet, du kannst dich jederzeit an der Ausarbeitung beteiligen.
+</div>
+{% endblock %}
+
+{% block status_rfc %}
+<div class="status rfc">
+    <div class="title">RFC</div>
+    Der:die Autor:in hat die Ausarbeitung des Proposals abgeschlossen und fragt nun nach Kommentaren und Veränderungsvorschlägen.
+</div>
+{% endblock %}
+
+{% block status_voting %}
+<div class="status voting">
+    <div class="title">Voting</div>
+    Das Voting für dieses Proposal läuft <b>noch 4 Tage</b>, bitte beteilige dich wenn du dir eine Meinung bilden konntest.
+</div>
+{% endblock %}
+
+{% block status_abandoned %}
+<div class="status abandoned">
+    <div class="title">Inaktiv</div>
+    Dieses Proposal hat noch kein Ergebnis erzielt und wurde <b>seit 2 Jahren</b> nicht mehr bearbeitet.
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'proposal/proposal.html.twig' %}
+
+{% block title %}
+    Proposal
+{% endblock %}
+
+{% block baseleft %}
+    {% block tabs %}
+        {% embed 'proposal/tabs.html.twig' %}
+        {% endembed %}
+    {% endblock %}
+{% endblock %}
+
+{% block baseright %}
+    {% block details %}
+    {% endblock %}
+{% endblock %}
+
+{% block stylesheets %}
+    
+    {{ parent() }}
+    
+    {% stylesheets filter="sass"
+        "css/proposal/single.scss"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}

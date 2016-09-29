@@ -1,0 +1,14 @@
+@import "../basic";
+
+#proposal-container {
+    
+    width: 70%;
+    border: 1px solid black;
+    margin-left: 90px;
+    background: white;
+    border-radius: 2px;
+    overflow: visible;
+    min-height: 200px;
+    
+    @include box-shadow();
+}

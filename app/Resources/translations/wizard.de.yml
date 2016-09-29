@@ -1,0 +1,32 @@
+#LABELS
+form.label.name: Titel
+form.label.description: Kurzbeschreibung
+form.label.content: Haupttext
+form.label.status: Status
+form.label.previous: Zurück
+form.label.next: Weiter
+
+#BESCHREIBUNGEN
+form.description.name: >
+                        Wähle einen deutlichen Titel für dein Proposal, 
+                        der zeigt was du vorhast. Wenn du ein bestimmtes 
+                        Tag ändern oder einführen willst, sollte das hier 
+                        auch schon genannt sein, damit andere Leute darauf 
+                        aufmerksam werden.
+                        
+form.description.description: >
+                        Gib eine kurze zusammenfassende Übersicht, was du 
+                        machen möchtest und warum. Es reichen ein bis zwei Sätze.
+                        
+form.description.content: >
+                        Stelle so ausführlich wie möglich dein Konzept dar. Argumentiere 
+                        mit Beispielen, besorg dir Zahlen von TagInfo oder verlinke auf
+                        Overpass Turbo. Du kannst dich auch erst ein wenig ausprobieren, dein
+                        Text ist anfangs noch nicht öffentlich und du kannst unbeobachtet daran
+                        basteln.
+                        
+form.description.status: >
+                        Wähle hier aus in welchem Zustand dein Text ist, ob du ihn noch entwirfst,
+                        er schon fertig ausgearbeitet ist du aber noch Kommentare brauchst oder ob 
+                        schon gewählt werden soll. Bitte beachte auch die Vorgaben für den 
+                        Proposal-Prozess

@@ -1,0 +1,27 @@
+services:
+    osmcc.forum.source:
+        class: OSM\ComCollectBundle\Utils\ForumSource
+    osmcc.mailinglist.source:
+        class: OSM\ComCollectBundle\Utils\MailinglistSource
+    osmcc.wikitalk.source:
+        class: OSM\ComCollectBundle\Utils\WikitalkSource
+    osmcc.wikipage.source:
+        class: OSM\ComCollectBundle\Utils\WikipageSource
+        
+    osmcc.forum.persistence:
+        class: OSM\ComCollectBundle\Utils\ForumPersistence
+        arguments: 
+            entityManager: "@doctrine.orm.osmcc_entity_manager"
+    osmcc.mailinglist.persistence:
+        class: OSM\ComCollectBundle\Utils\MailinglistPersistence
+        arguments: 
+            entityManager: "@doctrine.orm.osmcc_entity_manager"
+            mailinglistSource: "@osmcc.mailinglist.source"
+    osmcc.wikitalk.persistence:
+        class: OSM\ComCollectBundle\Utils\WikitalkPersistence
+        arguments: 
+            entityManager: "@doctrine.orm.osmcc_entity_manager"
+    osmcc.wikipage.persistence:
+        class: OSM\ComCollectBundle\Utils\WikipagePersistence
+        arguments: 
+            entityManager: "@doctrine.orm.osmcc_entity_manager"

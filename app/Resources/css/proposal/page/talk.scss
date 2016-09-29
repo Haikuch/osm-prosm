@@ -1,0 +1,52 @@
+@import "../../basic";
+
+#proposal-container .talk {
+    
+    .tabs {
+        
+        width: 100%;
+        margin-top: -1px;
+        font-family: monospace;
+        font-size: 8pt;
+        height: 70px;
+        margin-bottom: 20px;
+        
+        >a {
+            
+            position: relative;
+            float: left;
+            bottom: -1px;
+            display: inline-block;
+            width: 110px;
+            padding: 10px;
+            border: 1px solid black;
+            border-right-color: #666666;
+            border-top: none;
+            border-left: none;
+            text-align: center;
+            color: #616161;
+            font-family: monospace;
+            font-size: 10pt;
+            background: white;
+            //border-bottom-left-radius: 6px;
+            //border-bottom-right-radius: 6px;
+        }
+        
+        >a.active {
+            
+            background: #FBC545;
+            color: black;
+        } 
+        
+        >a:hover {
+            
+            border-bottom-width: 3px;
+        }
+    }
+        
+    .channel-content {
+
+        padding: 20px;
+        padding-top: 0px;
+    }
+}

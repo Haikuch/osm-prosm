@@ -1,0 +1,15 @@
+{% trans_default_domain 'edit' %}
+
+{% block form_row %}
+    
+    <div class="row">
+        <div class="field cell">
+            {{ form_widget(form) }}
+        </div>                 
+        <div class="text cell"> 
+            <span class="label"> {{ form_label(form) }}</span> -
+            <span class="description">{{ ('form.description.' ~ name)|trans }}</span>
+        </div>               
+    </div>
+            
+{% endblock %}
