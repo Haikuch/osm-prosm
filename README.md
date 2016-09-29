@@ -1,4 +1,4 @@
-prosm
+Proposal Portal for OSM
 =====
 
-A Symfony project created on May 27, 2016, 7:57 pm.
+Make the tagging proposal process in OpenStreetMap more comfortable, clearly and open for everyone
